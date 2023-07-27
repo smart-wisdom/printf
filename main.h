@@ -20,8 +20,8 @@
 
 /**
  * struct fmt - Struct op
- * @fmt: The format
- * @fn: The function associated
+ * @fmt: format
+ * @fn: function associated
  */
 struct fmt
 {
@@ -94,7 +94,7 @@ int print_rot13(va_list types, char buffer[],
 /* write handlers */
 int handle_write_char(char c, char buffer[],
 	int flags, int width, int precision, int size);
-int write_number(int positive, int ind, char buffer[],
+int write_number(int negative, int ind, char buffer[],
 	int flags, int width, int precision, int size);
 int write_num(int ind, char buffer[], int flags, int width, int precision,
 	int length, char padd, char more_c);
@@ -104,9 +104,9 @@ int write_unsgnd(int negative, int ind,char buffer[],
 	int flags, int width, int precision, int size);
 
 /****************** UTILS ******************/
-int is_printable(char);
-int append_hexa_code(char, char[], int);
-int is_digit(char);
+int is_printable(char c);
+int append_hexa_code(char ascii_code, char buffer[], int i);
+int is_digit(char c);
 
 long int convert_size_number(long int num, int size);
 long int convert_size_unsgnd(unsigned long int num, int size);

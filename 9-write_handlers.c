@@ -55,21 +55,21 @@ int write_number(int negative, int ind, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	int len = BUFF_SIZE - ind - 1;
-	char padd = ' ', extra_ch = 0;
+	char padd = ' ', more_ch = 0;
 
 	UNUSED(size);
 
 	if ((flags & F_ZERO) && !(flags & F_MINUS))
 		padd = '0';
 	if (negative)
-		extra_ch = '-';
+		more_ch = '-';
 	else if (flags & F_PLUS)
-		extra_ch = '+';
+		more_ch = '+';
 	else if (flags & F_SPACE)
-		extra_ch = ' ';
+		more_ch = ' ';
 
 	return (write_num(ind, buffer, flags, width, precision,
-		len, padd, extra_ch));
+		len, padd, more_ch));
 }
 /**
  * write_num - program that Writes a number using a bufffer
