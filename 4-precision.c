@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * get_precision - program that calculates the precision
  * @format: the formatted string that prints the args
