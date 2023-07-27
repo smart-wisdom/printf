@@ -3,10 +3,10 @@
 /****** PRINT CHAR ******/
 
 /**
- * print_char - Prints a char
- * @types: arguments lists
+ * print_char - program that prints a character
+ * @types: list arguments
  * @buffer: Buffer array to handle print
- * @flags:  Calculates it active flags
+ * @flags: Calculates it active flags
  * @width: Width
  * @precision: Precision specification
  * @size: Size of  specifier
@@ -17,14 +17,16 @@ int print_char(va_list types, char buffer[],
 {
 	char c = va_arg(types, int);
 
-	return (handle_write_char(c, buffer, flags, width, precision, size));
+	return (handle_write_char(c, buffer, flags,
+				width, precision, size));
 }
-/************************* PRINT A STRING *************************/
+/****** PRINT A STRING ******/
+
 /**
- * print_string - Prints a string
- * @types: Lists arguments
- * @buffer: Buffer array to handle print
- * @flags:  Calculates it active flags
+ * print_string - program that prints a string
+ * @types: List arguments
+ * @buffer: buffer array to handle print
+ * @flags: calculates it active flags
  * @width: width
  * @precision: Precision specification
  * @size: Size of specifier
@@ -75,12 +77,13 @@ int print_string(va_list types, char buffer[],
 	return (write(1, str, len));
 }
 
-/************************* PRINT PERCENT SIGN *************************/
+/****** PRINT PERCENT SIGN ******/
+
 /**
- * print_percent - Prints a percent sign
+ * print_percent - program that prints a percent sign
  * @types: List arguments
  * @buffer: Buffer array to handle print
- * @flags:  Calculates it active flags
+ * @flags:  calculates it active flags
  * @width: width
  * @precision: Precision specification
  * @size: Size of specifier
@@ -98,12 +101,13 @@ int print_percent(va_list types, char buffer[],
 	return (write(1, "%%", 1));
 }
 
-/************************* PRINT INT *************************/
+/****** PRINT INT ******/
+
 /**
  * print_int - program that print int
  * @types: List arguments
  * @buffer: Buffer array to handle print
- * @flags:  Calculates it active flags
+ * @flags: Calculates it active flags
  * @width: width
  * @precision: Precision specification
  * @size: Size of specifier
@@ -143,6 +147,7 @@ int print_int(va_list types, char buffer[],
 }
 
 /****** PRINT BINARY ******/
+
 /**
  * print_binary - program that prints an unsigned number
  * @types: List arguments
